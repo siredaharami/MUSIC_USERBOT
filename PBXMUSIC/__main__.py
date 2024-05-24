@@ -47,6 +47,7 @@ async def init():
     await userbot.start()
 
     await PBX.start()
+    await restart_bots()
     await PBX.decorators()
     LOGGER("PBXMUSIC").info("╔═════ஜ۩۞۩ஜ════╗\n  ♨️ᴍᴀᴅᴇ ʙʏ ᴛᴇᴀᴍ ᴘʙx ♨️\n╚═════ஜ۩۞۩ஜ════╝")
     await idle()
