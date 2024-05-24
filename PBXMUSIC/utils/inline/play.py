@@ -447,6 +447,39 @@ def panel_markup_2(_, videoid, chat_id):
     ]
     return buttons
 
+def panel_markup_5(_, videoid, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["S_B_5"],
+                url=f"https://t.me/{app.username}?startgroup=true",
+            ),
+        ],
+        [
+            InlineKeyboardButton(text="ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="๏ ʜᴏᴍᴇ ๏",
+                callback_data=f"MainMarkup {videoid}|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="๏ ɴᴇxᴛ ๏",
+                callback_data=f"Pages Forw|1|{videoid}|{chat_id}",
+            ),
+        ],
+    ]
+    return buttons
 
 def panel_markup_3(_, videoid, chat_id):
     buttons = [
@@ -539,3 +572,36 @@ def panel_markup_4(_, vidid, chat_id, played, dur):
     ]
 
     return buttons
+
+def panel_markup_clone(_, vidid, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["S_B_5"],
+                url=f"https://t.me/{app.username}?startgroup=true",
+            ),
+        ],
+        [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {vidid}"
+            ),
+            InlineKeyboardButton(
+                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {vidid}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✚ ᴘʟᴀʏʟɪsᴛ ✚", callback_data=f"vip_playlist {vidid}"
+            ),
+        ],
+    ]
+
+    return buttons
+    
