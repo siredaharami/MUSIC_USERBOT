@@ -1,10 +1,6 @@
 import asyncio
-import random
-from pyrogram import Client, filters
-from pyrogram.enums import ChatType, ChatMemberStatus
+from pyrogram import filters
 from pyrogram.enums import ParseMode
-from pyrogram.errors import UserNotParticipant
-from pyrogram.types import ChatPermissions
 from PBXMUSIC import app
 from PBXMUSIC.utils.bad_ban import admin_filter
 from PBXMUSIC.utils.database import get_assistant
@@ -12,10 +8,7 @@ from PBXMUSIC.utils.database import get_assistant
 SPAM_CHATS = []
 
 
-@app.on_message(
-    filters.command(["utag"], prefixes=["/", "."])
-    & admin_filter
-)
+@app.on_message(filters.command(["utag"], prefixes=["/", "."]) & admin_filter)
 async def tag_all_useres(_, message):
     userbot = await get_assistant(message.chat.id)
     if message.chat.id in SPAM_CHATS:

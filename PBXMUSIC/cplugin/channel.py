@@ -2,13 +2,11 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from PBXMUSIC import app
 from PBXMUSIC.utils.database import set_cmode
 from PBXMUSIC.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 from time import time
 import asyncio
-from PBXMUSIC.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}

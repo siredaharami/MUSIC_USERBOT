@@ -1,21 +1,11 @@
 import asyncio
 from PBXMUSIC.misc import SUDOERS
-from PBXMUSIC.core.userbot import Userbot
 from pyrogram import Client, filters
-from pyrogram.errors import UserAlreadyParticipant
 import asyncio
-import random
 from pyrogram import Client, filters
 from pyrogram.enums import ChatMemberStatus
-from pyrogram.errors import (
-    ChatAdminRequired,
-    InviteRequestSent,
-    UserAlreadyParticipant,
-    UserNotParticipant,
-)
 from PBXMUSIC.utils.bad_ban import admin_filter
-from PBXMUSIC.utils.decorators.userbotjoin import UserbotWrapper
-from PBXMUSIC.utils.database import get_assistant, is_active_chat
+from PBXMUSIC.utils.database import get_assistant
 
 links = {}
 

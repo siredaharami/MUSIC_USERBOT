@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from PBXMUSIC import YouTube, app
+from PBXMUSIC import YouTube
 from PBXMUSIC.core.call import PBX
 from PBXMUSIC.misc import db
 from PBXMUSIC.utils.database import get_loop

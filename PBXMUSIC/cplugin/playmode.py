@@ -1,7 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from PBXMUSIC import app
 from PBXMUSIC.utils.database import get_playmode, get_playtype, is_nonadmin_chat
 from PBXMUSIC.utils.decorators import language
 from PBXMUSIC.utils.inline.settings import playmode_users_markup

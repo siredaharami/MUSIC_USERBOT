@@ -8,20 +8,15 @@ from pyrogram.errors import (
     UserNotParticipant,
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram import Client, filters
-from PBXMUSIC import YouTube, app
+from PBXMUSIC import app
 from PBXMUSIC.misc import SUDOERS
 from PBXMUSIC.utils.database import (
     get_assistant,
-    get_cmode,
     get_lang,
-    get_playmode,
-    get_playtype,
     is_active_chat,
     is_maintenance,
 )
-from PBXMUSIC.utils.inline import botplaylist_markup
-from config import PLAYLIST_IMG_URL, SUPPORT_CHAT, adminlist
+from config import SUPPORT_CHAT
 from strings import get_string
 
 links = {}
@@ -138,4 +133,3 @@ def UserbotWrapper(command):
         return await command(client, message, _, chat_id)
 
     return wrapper
-    

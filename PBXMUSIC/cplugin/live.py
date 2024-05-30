@@ -1,6 +1,6 @@
 from pyrogram import filters, Client
 import os
-from PBXMUSIC import YouTube, app
+from PBXMUSIC import YouTube
 from PBXMUSIC.utils.channelplay import get_channeplayCB
 from PBXMUSIC.utils.decorators.language import languageCB
 from PBXMUSIC.utils.stream.stream import stream

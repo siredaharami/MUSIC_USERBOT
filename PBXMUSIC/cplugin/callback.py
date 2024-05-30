@@ -1,16 +1,9 @@
 import asyncio
 import random
-from pyrogram.enums import ChatMemberStatus
-from pyrogram.errors import (
-    ChatAdminRequired,
-    InviteRequestSent,
-    UserAlreadyParticipant,
-    UserNotParticipant,
-)
 from PBXMUSIC.utils.database import get_assistant
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from PBXMUSIC import YouTube, app
+from PBXMUSIC import YouTube
 from PBXMUSIC.core.call import PBX
 from PBXMUSIC.misc import SUDOERS, db
 from PBXMUSIC.utils.database import (
@@ -36,19 +29,13 @@ from PBXMUSIC.utils.inline import (
     stream_markup2,
     stream_markup_timer2,
     panel_markup_5,
-    track_markup,
-    slider_markup,
-    livestream_markup,
-    playlist_markup,
     stream_markup,
     stream_markup_timer,
-    telegram_markup,
     panel_markup_4,
     panel_markup_3,
     panel_markup_2,
     stream_markup_timer2,
     stream_markup2,
-    queue_markup,
     panel_markup_1,
 )
 from PBXMUSIC.utils.stream.autoclear import auto_clean
@@ -64,7 +51,6 @@ from config import (
     votemode,
 )
 from strings import get_string
-from config import lyrical
 
 wrong = {}
 

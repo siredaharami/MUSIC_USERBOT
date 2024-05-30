@@ -1,14 +1,9 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from unidecode import unidecode
 
-from PBXMUSIC import app
-from PBXMUSIC.misc import SUDOERS
 from PBXMUSIC.utils.database import (
     get_active_chats,
     get_active_video_chats,
-    remove_active_chat,
-    remove_active_video_chat,
 )
 
 

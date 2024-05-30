@@ -44,4 +44,3 @@ async def get_link_group(client, message):
             return
     except Exception:
         pass
-        

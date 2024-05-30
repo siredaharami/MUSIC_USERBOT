@@ -10,7 +10,13 @@ from PBXMUSIC.core.call import PBX
 from PBXMUSIC.misc import db
 from PBXMUSIC.utils.database import add_active_video_chat, is_active_chat
 from PBXMUSIC.utils.exceptions import AssistantErr
-from PBXMUSIC.utils.inline import aq_markup, queuemarkup, close_markup, stream_markup, stream_markup2
+from PBXMUSIC.utils.inline import (
+    aq_markup,
+    queuemarkup,
+    close_markup,
+    stream_markup,
+    stream_markup2,
+)
 from PBXMUSIC.utils.pastebin import PBXBin
 from PBXMUSIC.utils.stream.queue import put_queue, put_queue_index
 from youtubesearchpython.__future__ import VideosSearch
@@ -107,10 +113,11 @@ async def stream(
                         f"https://t.me/{app.username}?start=info_{vidid}",
                         title[:23],
                         duration_min,
-                        user_name), reply_markup=InlineKeyboardMarkup(button))
-                
-                    
-                
+                        user_name,
+                    ),
+                    reply_markup=InlineKeyboardMarkup(button),
+                )
+
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
         if count == 0:
@@ -161,7 +168,9 @@ async def stream(
             await app.send_photo(
                 chat_id=original_chat_id,
                 photo=img,
-                caption=_["queue_4"].format(position, title[:20], duration_min, user_name),
+                caption=_["queue_4"].format(
+                    position, title[:20], duration_min, user_name
+                ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
@@ -195,8 +204,11 @@ async def stream(
                     f"https://t.me/{app.username}?start=info_{vidid}",
                     title[:20],
                     duration_min,
-                    user_name), reply_markup=InlineKeyboardMarkup(button))
-                
+                    user_name,
+                ),
+                reply_markup=InlineKeyboardMarkup(button),
+            )
+
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
     elif streamtype == "soundcloud":
@@ -420,9 +432,6 @@ async def stream(
             await mystic.delete()
 
 
-
-
-
 # Function to get thumbnail by video ID
 async def get_thumb(videoid):
     try:
@@ -446,6 +455,3 @@ async def get_thumb(vidid):
         return thumbnail
     except Exception as e:
         return config.YOUTUBE_IMG_URL
-    
-
-                

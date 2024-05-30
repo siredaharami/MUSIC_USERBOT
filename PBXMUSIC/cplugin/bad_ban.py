@@ -1,6 +1,4 @@
-import requests
 import random
-from PBXMUSIC import app, userbot
 from PBXMUSIC.misc import SUDOERS
 from pyrogram import filters, Client
 from pyrogram.types import *

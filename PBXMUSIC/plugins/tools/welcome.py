@@ -1,44 +1,15 @@
 from PBXMUSIC import app
-from pyrogram import Client, filters
-from pyrogram.enums import ChatMemberStatus
-from pyrogram.errors import (
-    ChatAdminRequired,
-    InviteRequestSent,
-    UserAlreadyParticipant,
-    UserNotParticipant,
-)
-from pyrogram.errors import RPCError
+from pyrogram import filters
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardMarkup, InlineKeyboardButton
-from os import environ
-from typing import Union, Optional
 from PIL import Image, ImageDraw, ImageFont
-from os import environ
-import requests
-import random
-from PBXMUSIC import app, userbot
-from PBXMUSIC.misc import SUDOERS
-from pyrogram import * 
-from pyrogram.types import *
-from PBXMUSIC.utils.bad_ban import admin_filter
-import random
-from pyrogram import Client, filters
-from pyrogram.types import ChatJoinRequest, InlineKeyboardButton, InlineKeyboardMarkup
+from PBXMUSIC import app
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from PIL import Image, ImageDraw, ImageFont
-import asyncio, os, time, aiohttp
-from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
-from asyncio import sleep
-from pyrogram import filters, Client, enums
-from pyrogram.enums import ParseMode
-from pyrogram import *
-from pyrogram.types import *
+from PIL import Image, ImageDraw, ImageFont
+from pyrogram import filters, enums
 from logging import getLogger
-from PBXMUSIC.utils.bad_ban import admin_filter
-import os
-from PBXMUSIC.misc import SUDOERS
 from PIL import ImageDraw, Image, ImageFont, ImageChops
-from pyrogram import *
-from pyrogram.types import *
 from logging import getLogger
 
 
@@ -52,10 +23,8 @@ random_photo = [
 # --------------------------------------------------------------------------------- #
 
 
-
-
-
 LOGGER = getLogger(__name__)
+
 
 class WelDatabase:
     def __init__(self):
@@ -72,7 +41,9 @@ class WelDatabase:
         if chat_id in self.data:
             del self.data[chat_id]
 
+
 wlcm = WelDatabase()
+
 
 class temp:
     ME = None
@@ -81,7 +52,6 @@ class temp:
     MELCOW = {}
     U_NAME = None
     B_NAME = None
-
 
 
 def circle(pfp, size=(500, 500)):
@@ -95,24 +65,22 @@ def circle(pfp, size=(500, 500)):
     pfp.putalpha(mask)
     return pfp
 
+
 def welcomepic(pic, user, chatname, id, uname):
     background = Image.open("PBXMUSIC/assets/wel2.png")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp)
     pfp = pfp.resize((1157, 1158))
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('PBXMUSIC/assets/font.ttf', size=60)
-    welcome_font = ImageFont.truetype('PBXMUSIC/assets/font.ttf', size=60)
-    draw.text((1800, 700), f'NAME: {user}', fill=(255, 255, 255), font=font)
-    draw.text((1800, 830), f'ID: {id}', fill=(255, 255, 255), font=font)
+    font = ImageFont.truetype("PBXMUSIC/assets/font.ttf", size=60)
+    welcome_font = ImageFont.truetype("PBXMUSIC/assets/font.ttf", size=60)
+    draw.text((1800, 700), f"NAME: {user}", fill=(255, 255, 255), font=font)
+    draw.text((1800, 830), f"ID: {id}", fill=(255, 255, 255), font=font)
     draw.text((1800, 965), f"USERNAME : {uname}", fill=(255, 255, 255), font=font)
     pfp_position = (391, 336)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
-
-
-
 
 
 @app.on_message(filters.command("welcome") & ~filters.private)
@@ -133,18 +101,21 @@ async def auto_state(_, message):
                 await message.reply_text("**ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ !**")
             else:
                 await wlcm.add_wlcm(chat_id)
-                await message.reply_text(f"**ᴅɪsᴀʙʟᴇᴅ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɪɴ** {message.chat.title}")
+                await message.reply_text(
+                    f"**ᴅɪsᴀʙʟᴇᴅ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɪɴ** {message.chat.title}"
+                )
         elif state == "on":
             if not A:
                 await message.reply_text("**ᴇɴᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ.**")
             else:
                 await wlcm.rm_wlcm(chat_id)
-                await message.reply_text(f"**ᴇɴᴀʙʟᴇᴅ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɪɴ ** {message.chat.title}")
+                await message.reply_text(
+                    f"**ᴇɴᴀʙʟᴇᴅ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɪɴ ** {message.chat.title}"
+                )
         else:
             await message.reply_text(usage)
     else:
         await message.reply("**sᴏʀʀʏ ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴇɴᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ!**")
-
 
 
 @app.on_chat_member_updated(filters.group, group=-3)
@@ -156,10 +127,10 @@ async def greet_new_member(_, member: ChatMemberUpdated):
         return
 
     user = member.new_chat_member.user if member.new_chat_member else member.from_user
-    
+
     # Add the modified condition here
     if member.new_chat_member and not member.old_chat_member:
-    
+
         try:
             pic = await app.download_media(
                 user.photo.big_file_id, file_name=f"pp{user.id}.png"
@@ -194,13 +165,12 @@ async def greet_new_member(_, member: ChatMemberUpdated):
 
 **❅─────✧❅✦❅✧─────❅**
 """,
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton(button_text, url=deep_link)],
-                    [InlineKeyboardButton(text=add_button_text, url=add_link)],
-                ])
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton(button_text, url=deep_link)],
+                        [InlineKeyboardButton(text=add_button_text, url=add_link)],
+                    ]
+                ),
             )
         except Exception as e:
             LOGGER.error(e)
-
-
-      

@@ -14,10 +14,10 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 # Get Your bot username
-BOT_USERNAME = getenv("BOT_USERNAME" , "MissBroken_Bot")
+BOT_USERNAME = getenv("BOT_USERNAME", "MissBroken_Bot")
 
-# Don't Add style font 
-BOT_USERNAME2 = getenv("BOT_USERNAME2" , "miss Broken")
+# Don't Add style font
+BOT_USERNAME2 = getenv("BOT_USERNAME2", "miss Broken")
 
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
@@ -32,7 +32,7 @@ LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002043538118"))
 # Get this value from  on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID"))
 
-## Fill these variables if you're deploying on heroku.
+# Fill these variables if you're deploying on heroku.
 # Your heroku app name
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # Get it from http://dashboard.heroku.com/account
@@ -53,23 +53,29 @@ SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/THE_PUNJABI_BANDE")
 # Maximum Limit Allowed for users to save playlists on bot's server
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
 
-# MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
+# MaximuM limit for fetching playlist's track from youtube, spotify, apple
+# links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "2500"))
-# Set this to True if you want the assistant to automatically leave chats after an interval
+# Set this to True if you want the assistant to automatically leave chats
+# after an interval
 AUTO_LEAVING_ASSISTANT = False
 
-#Auto Gcast/Broadcast Handler (True = broadcast on , False = broadcast off During Hosting, Dont Do anything here.)
+# Auto Gcast/Broadcast Handler (True = broadcast on , False = broadcast
+# off During Hosting, Dont Do anything here.)
 AUTO_GCAST = os.getenv("AUTO_GCAST")
 
-#Auto Broadcast Message That You Want Use In Auto Broadcast In All Groups.
+# Auto Broadcast Message That You Want Use In Auto Broadcast In All Groups.
 AUTO_GCAST_MSG = getenv("AUTO_GCAST_MSG", "")
 
 # Get this credentials from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "19609edb1b9f4ed7be0c8c1342039362")
-SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "409e31d3ddd64af08cfcc3b0f064fcbe")
+SPOTIFY_CLIENT_SECRET = getenv(
+    "SPOTIFY_CLIENT_SECRET", "409e31d3ddd64af08cfcc3b0f064fcbe"
+)
 
 
-# Maximum limit for fetching playlist's track from youtube, spotify, apple links.
+# Maximum limit for fetching playlist's track from youtube, spotify, apple
+# links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
 RADIO_URL = "https://www.youtube.com/live/eu191hR_LEc?si=T-9QYD548jd0Mogp"
 
@@ -84,7 +90,8 @@ AUTO_SUGGESTION_TIME = int(
     getenv("AUTO_SUGGESTION_TIME", "3")
 )  # Remember to give value in Seconds
 
-# Set it True if you want to bot to suggest about bot commands to random chats of your bots.
+# Set it True if you want to bot to suggest about bot commands to random
+# chats of your bots.
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "True")
 # Cleanmode time after which bot will delete its old messages from chats
 CLEANMODE_DELETE_MINS = int(
@@ -104,23 +111,20 @@ STRING5 = getenv("STRING_SESSION5", None)
 # ██╔══██╗██╔══██╗██║░░██║██╔═██╗░██╔══╝░░██║╚████║
 # ██████╦╝██║░░██║╚█████╔╝██║░╚██╗███████╗██║░╚███║
 # ╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝
-# 
+#
 #      ███╗░░░███╗██╗░░░██╗░██████╗██╗░█████╗░
 #      ████╗░████║██║░░░██║██╔════╝██║██╔══██╗
 #      ██╔████╔██║██║░░░██║╚█████╗░██║██║░░╚═╝
 #      ██║╚██╔╝██║██║░░░██║░╚═══██╗██║██║░░██╗
 #      ██║░╚═╝░██║╚██████╔╝██████╔╝██║╚█████╔╝
 #      ╚═╝░░░░░╚═╝░╚═════╝░╚═════╝░╚═╝░╚════╝░
-    
-                       
- #####    ##   ####    
- ##  ##  ####  ## ##   
- #####  ##  ## ##  ##  
- ##  ## ###### ##  ##  
- ##  ## ##  ## ## ##   
- #####  ##  ## ####
 
-
+#####    ##   ####
+##  ##  ####  ## ##
+#####  ##  ## ##  ##
+##  ## ###### ##  ##
+##  ## ##  ## ## ##
+#####  ##  ## ####
 
 
 BANNED_USERS = filters.user()
@@ -171,4 +175,4 @@ if SUPPORT_CHAT:
     if not re.match("(?:http|https)://", SUPPORT_CHAT):
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-)
+        )

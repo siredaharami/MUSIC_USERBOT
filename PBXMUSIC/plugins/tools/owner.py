@@ -1,18 +1,12 @@
 from pyrogram import Client, filters
-import requests
-import random
-import os
-import re
-import asyncio
-import time
 from PBXMUSIC import app
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 
-app.on_message(
-    filters.command("owner")
-    & filters.group)
+app.on_message(filters.command("owner") & filters.group)
+
+
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/403d1431dd35d74d6fcad.jpg",
@@ -21,18 +15,16 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_BAD_MUNDA_ll")
+                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_BAD_MUNDA_ll"
+                    )
                 ],
-                [InlineKeyboardButton(
-                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_mxni_ll")
-            ]
+                [InlineKeyboardButton("🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_mxni_ll")],
             ]
         ),
     )
 
-@app.on_message(
-    filters.command("owner")
-    & filters.group)
+
+@app.on_message(filters.command("owner") & filters.group)
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/403d1431dd35d74d6fcad.jpg",
@@ -41,18 +33,16 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_BAD_MUNDA_ll")
+                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_BAD_MUNDA_ll"
+                    )
                 ],
-                [InlineKeyboardButton(
-                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_mxni_ll")
-            ]
+                [InlineKeyboardButton("🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_mxni_ll")],
             ]
         ),
     )
 
-@app.on_message(
-    filters.command("owner")
-    & filters.private)
+
+@app.on_message(filters.command("owner") & filters.private)
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/403d1431dd35d74d6fcad.jpg",
@@ -61,12 +51,10 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_BAD_MUNDA_ll")
+                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_BAD_MUNDA_ll"
+                    )
                 ],
-                [InlineKeyboardButton(
-                        "🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_mxni_ll")
-            ]
+                [InlineKeyboardButton("🗡️ 𝐎ᴡɴᴇʀ 🗡️", url=f"https://t.me/ll_mxni_ll")],
             ]
         ),
     )
-  

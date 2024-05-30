@@ -6,9 +6,7 @@ from pyrogram.types import *
 @app.on_message(filters.command(["gen", "ccgen"], [".", "!", "/"]))
 async def gen_cc(client, message):
     if len(message.command) < 2:
-        return await message.reply_text(
-            "** ᴘʟᴢ ɢɪᴠᴇ ᴍᴇ ᴀ ʙɪɴ ᴛᴏ \nɢᴇɴᴇʀᴀᴛᴇ ᴄᴄ ...**"
-        )
+        return await message.reply_text("** ᴘʟᴢ ɢɪᴠᴇ ᴍᴇ ᴀ ʙɪɴ ᴛᴏ \nɢᴇɴᴇʀᴀᴛᴇ ᴄᴄ ...**")
     try:
         await message.delete()
     except:
@@ -20,7 +18,8 @@ async def gen_cc(client, message):
     try:
         resp = await api.ccgen(bin, 10)
         cards = resp.liveCC
-        await aux.edit(f"""
+        await aux.edit(
+            f"""
 **💠 ᴄᴄ ʟɪᴠᴇ 💠**
 `{cards[0]}`\n`{cards[1]}`\n`{cards[2]}`
 `{cards[3]}`\n`{cards[4]}`\n`{cards[5]}`
@@ -31,5 +30,3 @@ async def gen_cc(client, message):
         )
     except Exception as e:
         return await aux.edit(f"**Error:** `{e}`")
-
-

@@ -1,9 +1,13 @@
 from datetime import datetime
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    CallbackQuery,
+)
 from config import OWNER_ID as owner_id
 from PBXMUSIC import app
-
 
 
 def content(msg: Message) -> [None, str]:
@@ -34,8 +38,6 @@ async def bugs(_, msg: Message):
     )
     datetimes_fmt = "%d-%m-%Y"
     datetimes = datetime.utcnow().strftime(datetimes_fmt)
-
-    
 
     bug_report = f"""
 **#ʙᴜɢ : ** **tg://user?id={owner_id}**
@@ -90,13 +92,10 @@ async def bugs(_, msg: Message):
             )
 
 
-
-
 @app.on_callback_query(filters.regex("close_send_photo"))
-async def close_send_photo(_,  query :CallbackQuery):
+async def close_send_photo(_, query: CallbackQuery):
     is_admin = await app.get_chat_member(query.message.chat.id, query.from_user.id)
     if not is_admin.privileges.can_delete_messages:
         await query.answer("ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ʀɪɢʜᴛs ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs.", show_alert=True)
     else:
         await query.message.delete()
-

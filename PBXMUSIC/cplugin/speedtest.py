@@ -4,8 +4,6 @@ import speedtest
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PBXMUSIC import app
-from PBXMUSIC.misc import SUDOERS
 from PBXMUSIC.utils.decorators.language import language
 
 

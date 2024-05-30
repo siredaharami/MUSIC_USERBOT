@@ -2,14 +2,12 @@ import os
 import random
 import string
 import asyncio
-from pyrogram import client, filters
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from PBXMUSIC.utils.database import get_assistant
 import config
 from PBXMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from PBXMUSIC.core.call import PBX
-from PBXMUSIC.misc import SUDOERS
 from PBXMUSIC.utils import seconds_to_min, time_to_seconds
 from PBXMUSIC.utils.channelplay import get_channeplayCB
 from PBXMUSIC.utils.decorators.language import languageCB
@@ -24,16 +22,10 @@ from PBXMUSIC.utils.inline import (
 )
 from PBXMUSIC.utils.database import (
     add_served_chat,
-    add_served_user,
-    blacklisted_chats,
-    get_lang,
-    is_banned_user,
-    is_on_off,
 )
 from PBXMUSIC.utils.logger import play_logs
 from config import BANNED_USERS, lyrical
 from time import time
-from PBXMUSIC.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -773,11 +765,9 @@ from PBXMUSIC.utils.database import add_active_video_chat, is_active_chat
 from PBXMUSIC.utils.exceptions import AssistantErr
 from PBXMUSIC.utils.inline import (
     aq_markup,
-    queuemarkup,
     close_markup,
     stream_markup,
     stream_markup2,
-    panel_markup_4,
 )
 from PBXMUSIC.utils.pastebin import PBXBin
 from PBXMUSIC.utils.stream.queue import put_queue, put_queue_index

@@ -1,15 +1,12 @@
 import time
 from time import time
 import asyncio
-from pyrogram.errors import UserAlreadyParticipant
 import random
-from pyrogram.errors import UserNotParticipant
 from pyrogram import filters, Client
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 import config
-from PBXMUSIC.misc import _boot_
 from PBXMUSIC.utils import bot_up_time
 from PBXMUSIC.plugins.sudo.sudoers import sudoers_list
 from PBXMUSIC.utils.database import (
@@ -18,17 +15,14 @@ from PBXMUSIC.utils.database import (
     blacklisted_chats,
     get_lang,
     is_banned_user,
-    is_on_off,
 )
 from PBXMUSIC.utils.decorators.language import LanguageStart
-from PBXMUSIC.utils.formatters import get_readable_time
 from PBXMUSIC.utils.inline import first_page, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 from PBXMUSIC.utils.database import get_assistant
 from time import time
 import asyncio
-from PBXMUSIC.utils.extraction import extract_user
 
 
 # Define a dictionary to track the last message timestamp for each user

@@ -4,7 +4,6 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from PBXMUSIC import app
 from PBXMUSIC.misc import SUDOERS
 from PBXMUSIC.utils.database import (
     get_client,
@@ -14,10 +13,8 @@ from PBXMUSIC.utils.database import (
 from PBXMUSIC.utils.decorators.language import language
 from PBXMUSIC.utils.formatters import alpha_to_int
 from config import adminlist
-import random
 from typing import Dict, List, Union
 
-from PBXMUSIC import userbot
 from PBXMUSIC.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth

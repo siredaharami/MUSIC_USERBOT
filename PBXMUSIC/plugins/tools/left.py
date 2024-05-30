@@ -1,27 +1,25 @@
 from PBXMUSIC import app
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.errors import RPCError
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardMarkup, InlineKeyboardButton
-from os import environ
 from typing import Union, Optional
 from PIL import Image, ImageDraw, ImageFont
 
 # --------------------------------------------------------------------------------- #
 
 get_font = lambda font_size, font_path: ImageFont.truetype(font_path, font_size)
-resize_text = (
-    lambda text_size, text: (text[:text_size] + "...").upper()
-    if len(text) > text_size
-    else text.upper()
+resize_text = lambda text_size, text: (
+    (text[:text_size] + "...").upper() if len(text) > text_size else text.upper()
 )
 
 # --------------------------------------------------------------------------------- #
+
 
 async def get_userinfo_img(
     bg_path: str,
     font_path: str,
     user_id: Union[int, str],
-    profile_path: Optional[str] = None
+    profile_path: Optional[str] = None,
 ):
     bg = Image.open(bg_path)
 
@@ -49,6 +47,7 @@ async def get_userinfo_img(
     bg.save(path)
     return path
 
+
 # --------------------------------------------------------------------------------- #
 
 bg_path = "PBXMUSIC/assets/userinfo.png"
@@ -58,25 +57,20 @@ font_path = "PBXMUSIC/assets/hiroko.ttf"
 
 # -------------
 
+
 @app.on_chat_member_updated(filters.group, group=20)
 async def member_has_left(client: app, member: ChatMemberUpdated):
 
     if (
         not member.new_chat_member
-        and member.old_chat_member.status not in {
-            "banned", "left", "restricted"
-        }
+        and member.old_chat_member.status not in {"banned", "left", "restricted"}
         and member.old_chat_member
     ):
         pass
     else:
         return
 
-    user = (
-        member.old_chat_member.user
-        if member.old_chat_member
-        else member.from_user
-    )
+    user = member.old_chat_member.user if member.old_chat_member else member.from_user
 
     # Check if the user has a profile photo
     if user.photo and user.photo.big_file_id:
@@ -90,7 +84,7 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
                 user_id=user.id,
                 profile_path=photo,
             )
-        
+
             caption = f"**❅─────✧❅✦❅✧─────❅**\n\n**๏ ᴀ ᴍᴇᴍʙᴇʀ ʟᴇғᴛ ᴛʜᴇ ɢʀᴏᴜᴘ🥀**\n\n**➻** {member.old_chat_member.user.mention}\n\n**๏ ᴏᴋ ʙʏᴇ ᴅᴇᴀʀ ᴀɴᴅ ʜᴏᴘᴇ ᴛᴏ sᴇᴇ ʏᴏᴜ ᴀɢᴀɪɴ ɪɴ ᴛʜɪs ᴄᴜᴛᴇ ɢʀᴏᴜᴘ ᴡɪᴛʜ ʏᴏᴜʀ ғʀɪᴇɴᴅs✨**\n\n**ㅤ•─╼⃝𖠁 ʙʏᴇ ♡︎ ʙᴀʙʏ 𖠁⃝╾─•**"
             button_text = "๏ ᴠɪᴇᴡ ᴜsᴇʀ ๏"
 
@@ -102,9 +96,9 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
                 chat_id=member.chat.id,
                 photo=welcome_photo,
                 caption=caption,
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton(button_text, url=deep_link)]
-                ])
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton(button_text, url=deep_link)]]
+                ),
             )
         except RPCError as e:
             print(e)
@@ -112,5 +106,3 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
     else:
         # Handle the case where the user has no profile photo
         print(f"User {user.id} has no profile photo.")
-        
-        

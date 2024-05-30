@@ -1,13 +1,13 @@
 from pyrogram import filters
-from pyrogram.types import *
 from PBXMUSIC import app
 from gpytranslate import Translator
 
-#.......
+# .......
 
 trans = Translator()
 
-#......
+# ......
+
 
 @app.on_message(filters.command("tr"))
 async def translate(_, message) -> None:
@@ -31,8 +31,5 @@ async def translate(_, message) -> None:
         source = await trans.detect(to_translate)
         dest = "en"
     translation = await trans(to_translate, sourcelang=source, targetlang=dest)
-    reply = (
-        f"ᴛʀᴀɴsʟᴀᴛᴇᴅ ғʀᴏᴍ {source} to {dest}:\n"
-        f"{translation.text}"
-    )
+    reply = f"ᴛʀᴀɴsʟᴀᴛᴇᴅ ғʀᴏᴍ {source} to {dest}:\n" f"{translation.text}"
     await message.reply_text(reply)

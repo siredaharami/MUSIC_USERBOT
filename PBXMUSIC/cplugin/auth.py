@@ -1,7 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PBXMUSIC import app
 from PBXMUSIC.utils import extract_user, int_to_alpha
 from PBXMUSIC.utils.database import (
     delete_authuser,

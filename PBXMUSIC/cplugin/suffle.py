@@ -3,7 +3,6 @@ import random
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PBXMUSIC import app
 from PBXMUSIC.misc import db
 from PBXMUSIC.utils.decorators import AdminRightsCheck
 from PBXMUSIC.utils.inline import close_markup

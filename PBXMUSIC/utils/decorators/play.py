@@ -1,5 +1,4 @@
 import asyncio
-from pyrogram import Client
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import (
     ChatAdminRequired,
@@ -363,4 +362,3 @@ def CPlayWrapper(command):
         )
 
     return wrapper
-  

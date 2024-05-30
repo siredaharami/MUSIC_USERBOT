@@ -1,15 +1,13 @@
 import asyncio
-from pyrogram import Client, filters
-from pyrogram.errors import FloodWait
-from dotenv import load_dotenv
-import config
-from PBXMUSIC.core.userbot import Userbot
+from pyrogram import filters
 from PBXMUSIC import app
 from datetime import datetime
 from PBXMUSIC.utils.database import get_assistant
+
 # Assuming Userbot is defined elsewhere
 
 last_checked_time = None
+
 
 @app.on_message(filters.command("botschk") & filters.group)
 async def check_bots_command(client, message):
@@ -35,7 +33,9 @@ async def check_bots_command(client, message):
                 # Check if bot responded to /start message
                 async for bot_message in userbot.get_chat_history(bot_id, limit=1):
                     if bot_message.from_user.id == bot_id:
-                        response += f"╭⎋ {bot.mention}\n l\n╰⊚ **sᴛᴀᴛᴜs: ᴏɴʟɪɴᴇ ✨**\n\n"
+                        response += (
+                            f"╭⎋ {bot.mention}\n l\n╰⊚ **sᴛᴀᴛᴜs: ᴏɴʟɪɴᴇ ✨**\n\n"
+                        )
                     else:
                         response += f"╭⎋ [{bot.mention}](tg://user?id={bot.id})\n l\n╰⊚ **sᴛᴀᴛᴜs: ᴏғғʟɪɴᴇ ❄**\n\n"
             except Exception:
@@ -44,8 +44,9 @@ async def check_bots_command(client, message):
             last_checked_time = start_time.strftime("%Y-%m-%d")
             await message.reply_text(f"{response}⏲️ ʟᴀsᴛ ᴄʜᴇᴄᴋ: {last_checked_time}")
         else:
-            await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀᴍᴀᴛ.\n\nᴘʟᴇᴀsᴇ ᴜsᴇ /botschk Bot_Username\n\nʟɪᴋᴇ :- `/botschk @TG_VC_BOT`")
+            await message.reply_text(
+                "ɪɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀᴍᴀᴛ.\n\nᴘʟᴇᴀsᴇ ᴜsᴇ /botschk Bot_Username\n\nʟɪᴋᴇ :- `/botschk @TG_VC_BOT`"
+            )
     except Exception as e:
         await message.reply_text(f"An error occurred: {e}")
         print(f"Error occurred during /botschk command: {e}")
-    

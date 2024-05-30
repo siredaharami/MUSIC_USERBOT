@@ -1,7 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PBXMUSIC import app
 from PBXMUSIC.core.call import PBX
 from PBXMUSIC.misc import SUDOERS, db
 from PBXMUSIC.utils import AdminRightsCheck

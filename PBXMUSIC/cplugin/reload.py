@@ -4,15 +4,13 @@ from pyrogram import Client, filters
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
-import re
 from os import getenv
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message
 from dotenv import load_dotenv
 from pyrogram import filters
 
 load_dotenv()
 
-from PBXMUSIC import app
 from PBXMUSIC.core.call import PBX
 from PBXMUSIC.misc import db
 from PBXMUSIC.utils.database import get_assistant, get_authuser_names, get_cmode

@@ -1,7 +1,7 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from PBXMUSIC import YouTube, app
+from PBXMUSIC import YouTube
 from PBXMUSIC.core.call import PBX
 from PBXMUSIC.misc import db
 from PBXMUSIC.utils import AdminRightsCheck, seconds_to_min

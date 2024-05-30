@@ -1,14 +1,9 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from PBXMUSIC import app
 from PBXMUSIC.core.call import PBX
 from PBXMUSIC.utils.decorators import AdminRightsCheck
-from PBXMUSIC.utils.inline import close_markup
 from config import BANNED_USERS
-import random
-from typing import Dict, List, Union
 
-from PBXMUSIC import userbot
 from PBXMUSIC.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth

@@ -9,7 +9,6 @@ from pyrogram.types import InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
-from PBXMUSIC import app
 from PBXMUSIC.core.userbot import assistants
 from PBXMUSIC.misc import SUDOERS, mongodb
 from PBXMUSIC.plugins import ALL_MODULES

@@ -1,5 +1,4 @@
-from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram import filters
 from pydub import AudioSegment
 import os
 from PBXMUSIC import app
@@ -27,9 +26,12 @@ async def bass_boost_command(client, message):
             os.remove(boosted_audio)
 
         else:
-            await message.reply_text("Please reply to an audio file with /bass to apply the bass boost effect.")
+            await message.reply_text(
+                "Please reply to an audio file with /bass to apply the bass boost effect."
+            )
     except Exception as e:
         await message.reply_text(f"🚫")
+
 
 def apply_bass_boost(audio_path):
     # Load audio file using pydub
@@ -43,5 +45,3 @@ def apply_bass_boost(audio_path):
     boosted_audio.export(boosted_audio_path, format="mp3")
 
     return boosted_audio_path
-  
-  

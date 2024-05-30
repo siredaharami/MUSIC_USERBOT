@@ -1,10 +1,5 @@
 import asyncio
-import random
 from pyrogram import Client, filters
-from pyrogram.enums import ChatType, ChatMemberStatus
-from pyrogram.errors import UserNotParticipant
-from pyrogram.types import ChatPermissions
-from PBXMUSIC import app
 from PBXMUSIC.utils.bad_ban import admin_filter
 
 

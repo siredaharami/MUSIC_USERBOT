@@ -13,9 +13,7 @@ def start_panel(_):
         ],
         [
             InlineKeyboardButton(text="۞ 𝐇𝙴𝙻𝙿 ۞", callback_data="settings_back_helper"),
-            InlineKeyboardButton(
-                text="☢ 𝐒𝙴𝚃 ☢", callback_data="settings_helper"
-            ),
+            InlineKeyboardButton(text="☢ 𝐒𝙴𝚃 ☢", callback_data="settings_helper"),
         ],
         [
             InlineKeyboardButton(text="✡ 𝐆𝚁𝙾𝚄𝙿 ✡", url=config.SUPPORT_CHAT),
@@ -35,11 +33,14 @@ def private_panel(_):
         [
             InlineKeyboardButton(text="ɢʀᴏᴜᴘ ✨", url=config.SUPPORT_CHAT),
             InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ 🥀", url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text="ʀᴇᴘᴏ 🗡️", url=f"https://github.com/Badhacker98/BADMUSIC/fork"),
+            InlineKeyboardButton(
+                text="ʀᴇᴘᴏ 🗡️", url=f"https://github.com/Badhacker98/BADMUSIC/fork"
+            ),
         ],
         [
-            InlineKeyboardButton(text="۞ ғᴇᴀᴛᴜʀᴇs ۞", callback_data="settings_back_helper")
+            InlineKeyboardButton(
+                text="۞ ғᴇᴀᴛᴜʀᴇs ۞", callback_data="settings_back_helper"
+            )
         ],
     ]
     return buttons
-    

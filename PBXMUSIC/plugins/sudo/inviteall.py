@@ -1,10 +1,10 @@
-import asyncio
 from pyrogram import Client, filters
-from pyrogram.enums import ChatType, UserStatus
+from pyrogram.enums import UserStatus
 from pyrogram.types import Message
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 from PBXMUSIC.misc import SUDOERS
 from PBXMUSIC import app
+
 
 @app.on_message(filters.command("inviteall", prefixes="/") & SUDOERS)
 async def invite(client: Client, message: Message):
@@ -30,5 +30,3 @@ async def invite(client: Client, message: Message):
                 return
             except Exception as e:
                 pass
-
-          

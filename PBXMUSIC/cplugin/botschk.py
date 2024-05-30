@@ -1,10 +1,5 @@
 import asyncio
 from pyrogram import Client, filters
-from pyrogram.errors import FloodWait
-from dotenv import load_dotenv
-import config
-from PBXMUSIC.core.userbot import Userbot
-from PBXMUSIC import app
 from datetime import datetime
 from PBXMUSIC.utils.database import get_assistant
 

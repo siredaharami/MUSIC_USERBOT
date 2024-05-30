@@ -78,8 +78,8 @@ def aq_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏", url="https://t.me/II_PBX1_II",
-                
+                text="๏ ᴍᴏʀᴇ ๏",
+                url="https://t.me/II_PBX1_II",
             ),
         ],
     ]
@@ -95,23 +95,14 @@ def queuemarkup(_, vidid, chat_id):
                 url=f"https://t.me/{app.username}?startgroup=true",
             ),
         ],
-
-
         [
             InlineKeyboardButton(
                 text="II ",
                 callback_data=f"ADMIN Pause|{chat_id}",
             ),
-
-            InlineKeyboardButton(
-                text="▢ ", callback_data=f"ADMIN Stop|{chat_id}"
-            ),
-
-            InlineKeyboardButton(
-                text="‣‣ ", callback_data=f"ADMIN Skip|{chat_id}"
-            ),
+            InlineKeyboardButton(text="▢ ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="‣‣ ", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▷ ", callback_data=f"ADMIN Resume|{chat_id}"),
-            
             InlineKeyboardButton(text="↺ ", callback_data=f"ADMIN Replay|{chat_id}"),
         ],
         [
@@ -120,8 +111,8 @@ def queuemarkup(_, vidid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏", url="https://t.me/THE_PUNJABI_BANDE",
-                
+                text="๏ ᴍᴏʀᴇ ๏",
+                url="https://t.me/THE_PUNJABI_BANDE",
             ),
         ],
     ]
