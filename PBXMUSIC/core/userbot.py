@@ -1,12 +1,15 @@
-from pyrogram import Client
 import asyncio
 from os import getenv
+
 from dotenv import load_dotenv
+from pyrogram import Client
 
 load_dotenv()
-import config
 from dotenv import load_dotenv
+
+import config
 from strings.__init__ import LOGGERS
+
 from ..logging import LOGGER
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
@@ -26,6 +29,7 @@ class Userbot(Client):
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
             no_updates=True,
+            plugins=dict(root="PBXMUSIC.plugins.USERBOT"),
         )
         self.two = Client(
             name="VIPAss2",
