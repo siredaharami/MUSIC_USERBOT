@@ -71,6 +71,7 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "409e31d3ddd64af08cfcc3b
 
 # Maximum limit for fetching playlist's track from youtube, spotify, apple links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
+RADIO_URL = "https://www.youtube.com/live/eu191hR_LEc?si=T-9QYD548jd0Mogp"
 
 
 # Telegram audio and video file size limit (in bytes)
