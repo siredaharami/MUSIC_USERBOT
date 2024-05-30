@@ -13,7 +13,6 @@ from PBXMUSIC.plugins.tools.clone import restart_bots
 from PBXMUSIC.utils.database import get_banned_users, get_gbanned
 
 
-
 async def init():
     if (
         not config.STRING1
