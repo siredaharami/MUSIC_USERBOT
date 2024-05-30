@@ -1,10 +1,11 @@
+from SafoneAPI import SafoneAPI
+
 from PBXMUSIC.core.bot import PBX
 from PBXMUSIC.core.dir import dirr
 from PBXMUSIC.core.git import git
 from PBXMUSIC.core.userbot import Userbot
 from PBXMUSIC.misc import dbb, heroku
 
-from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
 dirr()
