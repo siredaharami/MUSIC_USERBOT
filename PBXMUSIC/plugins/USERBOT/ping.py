@@ -45,4 +45,3 @@ async def ping_clone(client: Client, message: Message):
             ]
         ),
     )
-  
